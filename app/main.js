@@ -1,10 +1,10 @@
 if (pattern.length === 1) {
     function matchPattern(inputLine, pattern) {
     return inputLine.includes(pattern);
-  } else {
+  } }else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
-}
+
 
 function main() {
   const pattern = process.argv[3];
