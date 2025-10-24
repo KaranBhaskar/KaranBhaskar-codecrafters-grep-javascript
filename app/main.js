@@ -1,10 +1,19 @@
 function main() {
+  // Get the 3rd element in the command line // node app/main.js "Karan" "Bhaskar"
   const pattern = process.argv[3];
+  //Built-in node js, importer of modules, trim removes spaces before and after
   const inputLine = require("fs").readFileSync(0, "utf-8").trim();
   
-  if (pattern.length === 1) {
-      function matchPattern(inputLine, pattern) {
-      return inputLine.includes(pattern);
+  console.log(pattern, inputLine)
+  if (pattern.length >= 1) {
+    function matchPattern(inputLine, pattern) {
+      if(pattern.includes("\d")){
+        const d = Array.from({length: 10}, (_, i)=> (i).toString());
+        const contain = d.some((ele)=> inputLine.includes(ele));
+        return contain
+      }else{
+        return inputLine.includes(pattern);
+      }
     }}else {
       throw new Error(`Unhandled pattern ${pattern}`);
     }
