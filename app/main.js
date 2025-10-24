@@ -7,7 +7,8 @@ function main() {
   console.log(pattern, inputLine)
   if (pattern.length >= 1) {
     function matchPattern(inputLine, pattern) {
-      if(pattern.includes("\d")){
+      if(pattern.includes("\\d")){
+        console.log("HI")
         const d = Array.from({length: 10}, (_, i)=> (i).toString());
         const contain = d.some((ele)=> inputLine.includes(ele));
         return contain
